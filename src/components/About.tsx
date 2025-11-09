@@ -1,36 +1,36 @@
 import { Card } from "@/components/ui/card";
 import { Code2, Users, Trophy, Target, Rocket, Shield } from "lucide-react";
-
 const About = () => {
-  const highlights = [
-    {
-      icon: Code2,
-      title: "Tech Skills",
-      description: "Strong fundamentals in programming & web dev",
-      gradient: "from-blue-500/20 to-cyan-500/20",
-    },
-    {
-      icon: Users,
-      title: "Teamwork",
-      description: "Collaborative mindset from NCC training",
-      gradient: "from-purple-500/20 to-pink-500/20",
-    },
-    {
-      icon: Trophy,
-      title: "Disciplined",
-      description: "Motivated learner ready for challenges",
-      gradient: "from-amber-500/20 to-orange-500/20",
-    },
-  ];
-
-  const qualities = [
-    { icon: Target, label: "Goal-Oriented", color: "text-blue-400" },
-    { icon: Rocket, label: "Fast Learner", color: "text-purple-400" },
-    { icon: Shield, label: "NCC Trained", color: "text-amber-400" },
-  ];
-
-  return (
-    <section id="about" className="py-20 px-4 relative overflow-hidden">
+  const highlights = [{
+    icon: Code2,
+    title: "Tech Skills",
+    description: "Strong fundamentals in programming & web dev",
+    gradient: "from-blue-500/20 to-cyan-500/20"
+  }, {
+    icon: Users,
+    title: "Teamwork",
+    description: "Collaborative mindset from NCC training",
+    gradient: "from-purple-500/20 to-pink-500/20"
+  }, {
+    icon: Trophy,
+    title: "Disciplined",
+    description: "Motivated learner ready for challenges",
+    gradient: "from-amber-500/20 to-orange-500/20"
+  }];
+  const qualities = [{
+    icon: Target,
+    label: "Goal-Oriented",
+    color: "text-blue-400"
+  }, {
+    icon: Rocket,
+    label: "Fast Learner",
+    color: "text-purple-400"
+  }, {
+    icon: Shield,
+    label: "NCC Trained",
+    color: "text-amber-400"
+  }];
+  return <section id="about" className="py-20 px-4 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-20 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
       
@@ -72,22 +72,19 @@ const About = () => {
 
               {/* Quick Qualities */}
               <div className="flex flex-wrap gap-3 pt-4 border-t border-border">
-                {qualities.map((quality, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 px-4 py-2 bg-secondary/50 rounded-full hover:bg-secondary transition-colors"
-                  >
+                {qualities.map((quality, index) => <div key={index} className="flex items-center gap-2 px-4 py-2 bg-secondary/50 rounded-full hover:bg-secondary transition-colors">
                     <quality.icon className={`w-4 h-4 ${quality.color}`} />
                     <span className="text-sm font-medium">{quality.label}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </Card>
 
           {/* Side Stats */}
           <div className="space-y-6">
-            <Card className="bg-gradient-to-br from-primary/10 to-transparent border-primary/30 p-6 hover-lift animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <Card className="bg-gradient-to-br from-primary/10 to-transparent border-primary/30 p-6 hover-lift animate-fade-in" style={{
+            animationDelay: "0.1s"
+          }}>
               <h4 className="font-bold text-lg mb-4 flex items-center gap-2">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
                 Current Status
@@ -99,7 +96,7 @@ const About = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Year</span>
-                  <span className="font-semibold">1st Year</span>
+                  <span className="font-semibold">2nd Year</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Location</span>
@@ -112,7 +109,9 @@ const About = () => {
               </div>
             </Card>
 
-            <Card className="bg-card border-border p-6 hover-lift animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <Card className="bg-card border-border p-6 hover-lift animate-fade-in" style={{
+            animationDelay: "0.2s"
+          }}>
               <h4 className="font-bold text-lg mb-3">Fun Fact</h4>
               <p className="text-sm text-muted-foreground">
                 As an NCC Air Wing cadet, I've learned that precision in code is just as important as precision in flight!
@@ -123,12 +122,9 @@ const About = () => {
 
         {/* Highlight Cards */}
         <div className="grid md:grid-cols-3 gap-6">
-          {highlights.map((item, index) => (
-            <Card
-              key={index}
-              className={`relative overflow-hidden bg-gradient-to-br ${item.gradient} border-border p-6 hover-lift animate-fade-in group`}
-              style={{ animationDelay: `${0.3 + index * 0.1}s` }}
-            >
+          {highlights.map((item, index) => <Card key={index} className={`relative overflow-hidden bg-gradient-to-br ${item.gradient} border-border p-6 hover-lift animate-fade-in group`} style={{
+          animationDelay: `${0.3 + index * 0.1}s`
+        }}>
               <div className="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-full blur-xl group-hover:w-32 group-hover:h-32 transition-all duration-500"></div>
               
               <div className="relative z-10">
@@ -138,12 +134,9 @@ const About = () => {
                 <h3 className="font-semibold text-xl mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
-            </Card>
-          ))}
+            </Card>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
