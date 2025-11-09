@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Github, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Github, ExternalLink, Folder, Clock, CheckCircle2 } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -9,78 +10,156 @@ const Projects = () => {
       description: "A desktop application built with Python GUI to create, customize, and track workout routines. Features include exercise database, routine builder, progress tracking, and user-friendly interface.",
       tech: ["Python", "Tkinter", "GUI Development", "Data Management"],
       type: "Academic Project",
+      gradient: "from-blue-500/20 to-cyan-500/20",
+      features: ["Exercise Database", "Progress Tracking", "Custom Routines"],
+      status: "Completed",
     },
     {
       title: "Prelims Exam Website",
       description: "A comprehensive MCQ test platform where teachers can upload questions, set timers, and students can take timed exams. Includes automatic scoring, negative marking system, and results dashboard.",
       tech: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
       type: "Learning Project",
+      gradient: "from-purple-500/20 to-pink-500/20",
+      features: ["Timed Tests", "Auto Scoring", "Negative Marking"],
+      status: "Completed",
     },
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 bg-secondary/30">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-          <span className="gradient-text">Projects</span>
-        </h2>
-        <div className="w-20 h-1 bg-primary mx-auto mb-12 rounded-full"></div>
+    <section id="projects" className="py-20 px-4 bg-secondary/30 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Featured <span className="gradient-text">Projects</span>
+          </h2>
+          <div className="w-20 h-1 bg-primary mx-auto mb-4 rounded-full"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Academic and learning projects showcasing practical application of skills
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="bg-card border-border p-8 hover-lift animate-fade-in group"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className={`bg-gradient-to-br ${project.gradient} backdrop-blur-sm border-border hover-lift animate-fade-in group relative overflow-hidden`}
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="flex items-start justify-between mb-4">
-                <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <Badge variant="outline" className="border-primary text-primary">
-                  {project.type}
-                </Badge>
-              </div>
-
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.map((tech, techIndex) => (
-                  <Badge
-                    key={techIndex}
-                    variant="secondary"
-                    className="text-xs bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
-                  >
-                    {tech}
+              {/* Hover overlay effect */}
+              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-all duration-300"></div>
+              
+              <div className="relative p-8">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 bg-background/80 backdrop-blur-sm rounded-xl shadow-lg group-hover:scale-110 transition-transform">
+                      <Folder className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold group-hover:text-primary transition-colors mb-1">
+                        {project.title}
+                      </h3>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-400" />
+                        <span className="text-xs text-green-400 font-medium">{project.status}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <Badge variant="outline" className="border-primary/30 text-primary bg-background/50">
+                    {project.type}
                   </Badge>
-                ))}
-              </div>
+                </div>
 
-              <div className="flex gap-4 pt-4 border-t border-border">
-                <button className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                  <Github className="w-4 h-4" />
-                  <span>View Code</span>
-                </button>
-                <button className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                  <ExternalLink className="w-4 h-4" />
-                  <span>Details</span>
-                </button>
-              </div>
+                {/* Description */}
+                <p className="text-foreground/80 mb-6 leading-relaxed">
+                  {project.description}
+                </p>
 
-              <p className="text-xs text-muted-foreground mt-4 italic">
-                * Academic/Learning project - not currently deployed
-              </p>
+                {/* Features */}
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
+                    <Clock className="w-4 h-4 text-primary" />
+                    Key Features
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.features.map((feature, featureIndex) => (
+                      <Badge
+                        key={featureIndex}
+                        className="bg-background/80 text-foreground border border-border hover:border-primary transition-colors"
+                      >
+                        {feature}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Tech Stack */}
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold mb-3">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, techIndex) => (
+                      <Badge
+                        key={techIndex}
+                        variant="secondary"
+                        className="text-xs bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="flex gap-3 pt-4 border-t border-border/50">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex-1 border-primary/30 hover:bg-primary hover:text-primary-foreground transition-colors"
+                  >
+                    <Github className="w-4 h-4 mr-2" />
+                    View Code
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex-1 border-primary/30 hover:bg-primary hover:text-primary-foreground transition-colors"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Details
+                  </Button>
+                </div>
+
+                <p className="text-xs text-muted-foreground mt-4 italic flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 bg-muted-foreground rounded-full"></span>
+                  Academic/Learning project - not currently deployed
+                </p>
+              </div>
             </Card>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground">
-            More projects coming soon as I continue learning and building...
+        {/* Future Projects Teaser */}
+        <Card className="bg-gradient-to-r from-primary/10 to-electric-blue/10 border-primary/30 p-8 text-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <h3 className="text-2xl font-bold mb-3">More Projects Coming Soon</h3>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Currently working on new projects as I continue learning and expanding my skill set. 
+            Stay tuned for updates on full-stack web applications and more!
           </p>
-        </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Badge variant="outline" className="border-primary/30 px-4 py-2">
+              React Projects
+            </Badge>
+            <Badge variant="outline" className="border-primary/30 px-4 py-2">
+              API Integration
+            </Badge>
+            <Badge variant="outline" className="border-primary/30 px-4 py-2">
+              Database Management
+            </Badge>
+          </div>
+        </Card>
       </div>
     </section>
   );
