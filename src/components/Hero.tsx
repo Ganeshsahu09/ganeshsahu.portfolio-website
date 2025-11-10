@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowDown, Mail, Github, Linkedin, Code2, Trophy, GraduationCap } from "lucide-react";
-import profilePic from "@/assets/profile-picture.jpg";
+import profilePic from "@/assets/ganeshji-profile.png";
 
 const Hero = () => {
   const scrollToPortfolio = () => {
@@ -38,7 +38,12 @@ const Hero = () => {
               
               <img
                 src={profilePic}
-                alt="Ganeshji Sahu"
+                alt="Portrait of Ganeshji Sahu"
+                width={512}
+                height={512}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="relative w-48 h-48 md:w-56 md:h-56 rounded-full border-4 border-primary shadow-2xl glow-effect mx-auto lg:mx-0 object-cover"
               />
               
