@@ -16,6 +16,7 @@ const Hero = () => {
     { icon: Code2, label: "Technologies", value: "8+", delay: "0s" },
     { icon: GraduationCap, label: "Education", value: "B.Sc IT", delay: "0.1s" },
     { icon: Trophy, label: "NCC Cadet", value: "3rd Year", delay: "0.2s" },
+  ];
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
