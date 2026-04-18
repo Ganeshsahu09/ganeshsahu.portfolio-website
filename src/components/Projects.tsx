@@ -10,7 +10,8 @@ const Projects = () => {
     type: "Academic Project",
     gradient: "from-blue-500/20 to-cyan-500/20",
     features: ["Exercise Database", "Progress Tracking", "Custom Routines"],
-    status: "Completed"
+    status: "Completed",
+    liveUrl: null
   }, {
     title: "Prelims Exam Website",
     description: "A comprehensive MCQ test platform where teachers can upload questions, set timers, and students can take timed exams. Includes automatic scoring, negative marking system, and results dashboard.",
@@ -18,7 +19,44 @@ const Projects = () => {
     type: "Learning Project",
     gradient: "from-purple-500/20 to-pink-500/20",
     features: ["Timed Tests", "Auto Scoring", "Negative Marking"],
-    status: "Completed"
+    status: "Completed",
+    liveUrl: null
+  }, {
+    title: "E-commerce Website (Frontend)",
+    description: "Built a responsive digital storefront interface using modern frontend technologies. Designed product layouts, navigation flow, and ensured cross-device compatibility.",
+    tech: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+    type: "Frontend Project",
+    gradient: "from-green-500/20 to-emerald-500/20",
+    features: ["Product Layouts", "Navigation Flow", "Cross-device Compatibility", "Responsive Design"],
+    status: "Completed",
+    liveUrl: "https://eclectic-blancmange-46abc2.netlify.app/"
+  }, {
+    title: "Animated Login/Signup Page",
+    description: "Created an interactive authentication interface using CSS animations and transitions. Improved user engagement through smooth and visually appealing UI interactions.",
+    tech: ["HTML5", "CSS3", "JavaScript", "CSS Animations"],
+    type: "Frontend Project",
+    gradient: "from-orange-500/20 to-red-500/20",
+    features: ["CSS Animations", "Interactive UI", "Smooth Transitions", "User Engagement"],
+    status: "Completed",
+    liveUrl: "https://animated-login-signup-page.netlify.app/"
+  }, {
+    title: "Tic-Tac-Toe Game",
+    description: "Developed a browser-based game using JavaScript logic and state management. Implemented win-condition algorithms and dynamic UI updates.",
+    tech: ["HTML5", "CSS3", "JavaScript", "Game Logic"],
+    type: "Web Game",
+    gradient: "from-yellow-500/20 to-amber-500/20",
+    features: ["Win-condition Algorithms", "State Management", "Dynamic UI Updates", "Browser-based"],
+    status: "Completed",
+    liveUrl: "https://tic-tac-toe-drama.netlify.app/"
+  }, {
+    title: "Web Calculator",
+    description: "Built a functional calculator using JavaScript and DOM manipulation. Designed a clean and user-friendly interface for better usability.",
+    tech: ["HTML5", "CSS3", "JavaScript", "DOM Manipulation"],
+    type: "Utility Tool",
+    gradient: "from-indigo-500/20 to-blue-500/20",
+    features: ["Functional Calculator", "Clean Interface", "DOM Manipulation", "User-friendly"],
+    status: "Completed",
+    liveUrl: "https://web-calculator-basic.netlify.app/"
   }];
   return <section id="projects" className="py-20 px-4 bg-secondary/30 relative overflow-hidden">
       {/* Background decoration */}
@@ -93,12 +131,23 @@ const Projects = () => {
                 </div>
 
                 {/* Actions */}
-                
+                {project.liveUrl && (
+                  <div className="flex gap-3 mb-4">
+                    <Button asChild size="sm" className="bg-primary hover:bg-primary/90">
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Live Demo
+                      </a>
+                    </Button>
+                  </div>
+                )}
 
-                <p className="text-xs text-muted-foreground mt-4 italic flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 bg-muted-foreground rounded-full"></span>
-                  Academic/Learning project - not currently deployed
-                </p>
+                {!project.liveUrl && (
+                  <p className="text-xs text-muted-foreground mt-4 italic flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 bg-muted-foreground rounded-full"></span>
+                    Academic/Learning project - not currently deployed
+                  </p>
+                )}
               </div>
             </Card>)}
         </div>

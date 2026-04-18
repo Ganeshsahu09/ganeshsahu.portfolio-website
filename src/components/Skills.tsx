@@ -4,14 +4,23 @@ import { Code2, Briefcase, Star, Zap } from "lucide-react";
 
 const Skills = () => {
   const technicalSkills = [
-    { name: "C++ (OOP)", level: 80, category: "Programming" },
-    { name: "Python with DSA", level: 85, category: "Programming" },
-    { name: "SQL", level: 75, category: "Database" },
-    { name: "HTML", level: 90, category: "Web" },
-    { name: "CSS", level: 85, category: "Web" },
-    { name: "JavaScript", level: 80, category: "Web" },
-    { name: "Java", level: 70, category: "Backend" },
-    { name: "Linux", level: 75, category: "System" },
+    { name: "Python", category: "Programming" },
+    { name: "Java", category: "Programming" },
+    { name: "C++", category: "Programming" },
+    { name: "JavaScript (ES6+)", category: "Programming" },
+    { name: "SQL", category: "Database" },
+    { name: "HTML5", category: "Web" },
+    { name: "CSS3", category: "Web" },
+    { name: "Responsive Design", category: "Web" },
+    { name: "Flexbox", category: "Web" },
+    { name: "CSS Grid", category: "Web" },
+    { name: "MySQL (CRUD Operations)", category: "Database" },
+    { name: "Git", category: "Tools" },
+    { name: "GitHub", category: "Tools" },
+    { name: "Netlify", category: "Tools" },
+    { name: "Visual Studio Code", category: "Tools" },
+    { name: "Data Structures & Algorithms", category: "Core Concepts" },
+    { name: "Object-Oriented Programming", category: "Core Concepts" },
   ];
 
   const softSkills = [
@@ -23,7 +32,7 @@ const Skills = () => {
     { name: "Time Management", icon: "⏱️" },
   ];
 
-  const categories = ["Programming", "Web", "Database", "Backend", "System"];
+  const categories = ["Programming", "Web", "Database", "Tools", "Core Concepts"];
 
   return (
     <section id="skills" className="py-20 px-4 relative overflow-hidden">
@@ -131,7 +140,7 @@ const Skills = () => {
                 <h4 className="font-bold text-lg">NCC Training Impact</h4>
               </div>
               <p className="text-sm text-foreground/80 mb-4 leading-relaxed">
-                <span className="font-semibold text-primary">NCC Cadet (Air Wing) - 2nd Year</span>
+                <span className="font-semibold text-primary">NCC Cadet (Air Wing) - 3rd Year</span>
                 <br />
                 Enhanced leadership, discipline, and teamwork through rigorous military training and drills
               </p>
