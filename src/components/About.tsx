@@ -96,7 +96,7 @@ const About = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Year</span>
-                  <span className="font-semibold">2nd Year</span>
+                  <span className="font-semibold">3rd Year</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Location</span>
