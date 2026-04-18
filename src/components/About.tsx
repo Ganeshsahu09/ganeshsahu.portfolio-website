@@ -59,13 +59,13 @@ const About = () => {
               <p className="text-base leading-relaxed text-foreground/90 mb-6">
                 Hi, I'm <span className="text-primary font-semibold">Ganeshji Sahu</span>, 19 years old and currently pursuing{" "}
                 <span className="font-semibold">B.Sc. IT at KC College, Mumbai</span>. I have a good grasp of programming 
-                and web technologies like <span className="text-primary">C++, Python, SQL, HTML, CSS, JavaScript, PHP, and Linux</span>. 
+                and web technologies like <span className="text-primary">C++, Python, SQL, HTML, CSS, JavaScript, Java, and Linux</span>. 
                 I've worked on projects such as a Python-based Workout Planner App and a Prelims Exam Website featuring 
                 time-bound MCQ assessment.
               </p>
               
               <p className="text-base leading-relaxed text-foreground/90 mb-6">
-                Beyond tech, I am a <span className="font-semibold text-primary">Second-Year Air Wing NCC cadet</span>, which has 
+                Beyond tech, I am a <span className="font-semibold text-primary">Third-year Air Wing NCC cadet</span>, which has 
                 strengthened my discipline, teamwork, and leadership abilities. I'm currently seeking my first internship to 
                 gain real industry exposure and apply my skills in practical environments.
               </p>
@@ -96,7 +96,7 @@ const About = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Year</span>
-                  <span className="font-semibold">2nd Year</span>
+                  <span className="font-semibold">3rd Year</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Location</span>
