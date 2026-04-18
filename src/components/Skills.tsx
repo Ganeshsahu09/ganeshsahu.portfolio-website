@@ -5,12 +5,12 @@ import { Code2, Briefcase, Star, Zap } from "lucide-react";
 const Skills = () => {
   const technicalSkills = [
     { name: "C++ (OOP)", level: 80, category: "Programming" },
-    { name: "Python", level: 85, category: "Programming" },
+    { name: "Python with DSA", level: 85, category: "Programming" },
     { name: "SQL", level: 75, category: "Database" },
     { name: "HTML", level: 90, category: "Web" },
     { name: "CSS", level: 85, category: "Web" },
     { name: "JavaScript", level: 80, category: "Web" },
-    { name: "PHP", level: 70, category: "Backend" },
+    { name: "Java", level: 70, category: "Backend" },
     { name: "Linux", level: 75, category: "System" },
   ];
 
@@ -63,7 +63,7 @@ const Skills = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-bold">Technical Skills</h3>
-                <p className="text-sm text-muted-foreground">Proficiency levels</p>
+                <p className="text-sm text-muted-foreground">Technologies I work with</p>
               </div>
             </div>
             
@@ -81,16 +81,6 @@ const Skills = () => {
                         {skill.category}
                       </Badge>
                     </div>
-                    <span className="text-sm text-muted-foreground font-medium">{skill.level}%</span>
-                  </div>
-                  <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-primary to-electric-blue rounded-full transition-all duration-1000 group-hover:shadow-lg group-hover:shadow-primary/50"
-                      style={{
-                        width: `${skill.level}%`,
-                        animation: "slide-in 1s ease-out forwards",
-                      }}
-                    ></div>
                   </div>
                 </div>
               ))}
