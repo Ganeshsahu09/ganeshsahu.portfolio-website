@@ -140,7 +140,7 @@ const Skills = () => {
                 <h4 className="font-bold text-lg">NCC Training Impact</h4>
               </div>
               <p className="text-sm text-foreground/80 mb-4 leading-relaxed">
-                <span className="font-semibold text-primary">NCC Cadet (Air Wing) - 3rd Year</span>
+                <span className="font-semibold text-primary">NCC Cadet (Air Wing) - 2nd Year</span>
                 <br />
                 Enhanced leadership, discipline, and teamwork through rigorous military training and drills
               </p>

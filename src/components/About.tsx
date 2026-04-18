@@ -65,7 +65,7 @@ const About = () => {
               </p>
               
               <p className="text-base leading-relaxed text-foreground/90 mb-6">
-                Beyond tech, I am a <span className="font-semibold text-primary">Third-year Air Wing NCC cadet</span>, which has 
+                Beyond tech, I am a <span className="font-semibold text-primary">Second-year Air Wing NCC cadet</span>, which has 
                 strengthened my discipline, teamwork, and leadership abilities. I'm currently seeking my first internship to 
                 gain real industry exposure and apply my skills in practical environments.
               </p>
@@ -96,7 +96,7 @@ const About = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Year</span>
-                  <span className="font-semibold">3rd Year</span>
+                  <span className="font-semibold">2nd Year</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Location</span>
