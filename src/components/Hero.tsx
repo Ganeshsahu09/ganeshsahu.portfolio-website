@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowDown, Mail, Github, Linkedin, Code2, Trophy, GraduationCap } from "lucide-react";
-import profilePic from "@/assets/ganeshji-profile.png";
+import profilePic from "@/assets/Ganesh-Sahu-Image.jpeg";
 
 const Hero = () => {
   const scrollToPortfolio = () => {
